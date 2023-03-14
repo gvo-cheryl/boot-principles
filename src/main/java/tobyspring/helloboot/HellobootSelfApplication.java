@@ -21,6 +21,11 @@ public class HellobootSelfApplication {
         return new TomcatServletWebServerFactory();
     }
 
+    @Bean
+    public DispatcherServlet dispatcherServlet(){
+        return new DispatcherServlet();
+    }
+
     public static void main(String[] args) {
         SpringApplication.run(HellobootSelfApplication.class, args);
 
