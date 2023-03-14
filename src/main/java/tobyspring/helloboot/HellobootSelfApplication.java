@@ -15,6 +15,16 @@ import org.springframework.web.servlet.DispatcherServlet;
 @ComponentScan
 public class HellobootSelfApplication {
 
+    @Bean
+    public ServletWebServerFactory serverFactory(){
+        return new TomcatServletWebServerFactory();
+    }
+
+    @Bean
+    public DispatcherServlet dispatcherServlet(){
+        return new DispatcherServlet();
+    }
+
     public static void main(String[] args) {
         AnnotationConfigWebApplicationContext applicationContext = new AnnotationConfigWebApplicationContext () {
             @Override
@@ -22,12 +32,13 @@ public class HellobootSelfApplication {
                 super.onRefresh();
 
                 // 서블릿 컨테이너 띄우기
-                ServletWebServerFactory serverFactory = new TomcatServletWebServerFactory();
+                ServletWebServerFactory serverFactory = this.getBean(ServletWebServerFactory.class);
+                DispatcherServlet dispatcherServlet = this.getBean(DispatcherServlet.class);
+
                 WebServer webServer = serverFactory.getWebServer(servletContext -> {
 
                     // 서블릿 등록
-                    servletContext.addServlet("dispatcherServlet",
-                            new DispatcherServlet(this)).addMapping("/*"); // 슬래시 이후 모든 경로를 처리 한다.
+                    servletContext.addServlet("dispatcherServlet", dispatcherServlet).addMapping("/*"); // 슬래시 이후 모든 경로를 처리 한다.
                 });
                 webServer.start(); // Tomcat 서블릿 컨테이너 동작
 
