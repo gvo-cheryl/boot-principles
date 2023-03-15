@@ -2,8 +2,6 @@ package tobyspring.config.annotation;
 
 import org.springframework.context.annotation.Import;
 import tobyspring.config.MyAutoConfigImportSelector;
-import tobyspring.config.autoconfig.DispatcherServletConfig;
-import tobyspring.config.autoconfig.TomcatWebServerConfig;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
