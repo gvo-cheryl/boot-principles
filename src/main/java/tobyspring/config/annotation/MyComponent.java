@@ -1,4 +1,4 @@
-package tobyspring.helloboot;
+package tobyspring.config.annotation;
 
 import org.springframework.stereotype.Component;
 
