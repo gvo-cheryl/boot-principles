@@ -1,7 +1,6 @@
 package tobyspring.config.annotation;
 
 import org.springframework.context.annotation.Import;
-import tobyspring.config.MyAutoConfigImportSelector;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Condition;
 import org.springframework.context.annotation.ConditionContext;
 import org.springframework.core.type.AnnotatedTypeMetadata;
 import org.springframework.util.ClassUtils;
+import tobyspring.config.annotation.ConditionalMyOnClass;
 
 import java.util.Map;
 
