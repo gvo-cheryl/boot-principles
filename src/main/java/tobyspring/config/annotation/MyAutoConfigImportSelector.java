@@ -3,7 +3,7 @@ package tobyspring.config.annotation;
 import org.springframework.boot.context.annotation.ImportCandidates;
 import org.springframework.context.annotation.DeferredImportSelector;
 import org.springframework.core.type.AnnotationMetadata;
-import tobyspring.config.annotation.MyAutoConfiguration;
+import tobyspring.config.MyAutoConfiguration;
 
 import java.util.ArrayList;
 import java.util.List;

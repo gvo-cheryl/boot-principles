@@ -1,4 +1,4 @@
-package tobyspring.config.annotation;
+package tobyspring.config;
 
 import org.springframework.context.annotation.Configuration;
 
